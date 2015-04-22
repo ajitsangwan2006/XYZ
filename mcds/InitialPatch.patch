@@ -1,0 +1,39 @@
+Index: webapp/src/com/gisil/mcds/web/filter/UISecurityFilter.java
+===================================================================
+--- webapp/src/com/gisil/mcds/web/filter/UISecurityFilter.java	(revision 1860)
++++ webapp/src/com/gisil/mcds/web/filter/UISecurityFilter.java	(working copy)
+@@ -49,7 +49,7 @@
+ 
+ 	private ServletContext _context;
+ 
+-	private boolean isTestFlag = false;
++	private boolean isTestFlag = true;
+ 
+ 	public UISecurityFilter() {
+ 		_log = LogUtil.getLogger(UISecurityFilter.class);
+Index: webapp/web/UI/suiMCDSMenu.jsp
+===================================================================
+--- webapp/web/UI/suiMCDSMenu.jsp	(revision 1860)
++++ webapp/web/UI/suiMCDSMenu.jsp	(working copy)
+@@ -2,6 +2,8 @@
+ <%@ page import="com.gisil.mcds.web.controller.ui.SuiMCDSMenuController"%>
+ <%@ page import="com.gisil.mcds.web.controller.ui.SuiTransactionMenuController" %>
+ <%@ page import="com.gisil.mcds.web.servlet.ui.AggrListServlet" %>
++<%@ page import="com.gisil.mcds.web.controller.ui.SuiContentManagementMenuController" %>
++
+ <%SuiMCDSMenuController lController =  new SuiMCDSMenuController(request, response);%>
+ <html>
+ <head>
+@@ -30,11 +32,9 @@
+ 		<td Width="45%"></td>
+ 		<td align="left"><a href="<%=AggrListServlet.SERVLET_PATH %>">Content Management</a></td>
+ 	</tr>
+-	<!-- <tr><td Width="45%"></td><td align="left"><a href="suiCommissionMenu.jsp">Commission Management</a></td></tr>-->
+ 	<tr>
+ 		<td Width="45%"></td>
+-		<td align="left"><a href="<%=SuiMCDSMenuController.PAGE_PATH %>"><strike>Commission Management</strike></a></td>
+-	</tr>
++		<td align="left"><a href="suiCommissionMenu.jsp">Commission Management</a></td></tr>-->
+ 	<tr>
+ 		<td Width="45%"></td>
+ 		<td align="left"><a href="<%=response.encodeURL("configMgtServlet")%>">MCDS System Configuration</a></td>
