@@ -1,0 +1,37 @@
+create tablespace mcds datafile '/u01/app/oracle/oradata/mercury/mcds_01.dbf' size 100m autoextend on next 25m;
+
+create user mcds identified by mcds default tablespace mcds temporary tablespace temp quota unlimited on mcds;
+
+
+GRANT SELECT ON SUI.USERS TO mcds;
+GRANT SELECT ON SUI.AUDITLOG TO mcds
+GRANT CREATE CLUSTER TO mcds;
+GRANT CREATE DATABASE LINK TO mcds;
+GRANT CREATE DIMENSION TO mcds;
+GRANT CREATE EVALUATION CONTEXT TO mcds;
+GRANT CREATE EXTERNAL JOB TO mcds;
+GRANT CREATE INDEXTYPE TO mcds;
+GRANT CREATE JOB TO mcds;
+GRANT CREATE LIBRARY TO mcds;
+GRANT CREATE MATERIALIZED VIEW TO mcds;
+GRANT CREATE OPERATOR TO mcds;
+GRANT CREATE PROCEDURE TO mcds;
+GRANT CREATE PUBLIC DATABASE LINK TO mcds;
+GRANT CREATE PUBLIC SYNONYM TO mcds;
+GRANT CREATE RULE TO mcds;
+GRANT CREATE RULE SET TO mcds;
+GRANT CREATE SEQUENCE TO mcds;
+GRANT CREATE SYNONYM TO mcds;
+GRANT CREATE TABLE TO mcds;
+GRANT CREATE TRIGGER TO mcds;
+GRANT CREATE TYPE TO mcds;
+GRANT CREATE VIEW TO mcds;
+GRANT CREATE SESSION TO mcds;
+GRANT DEBUG ANY PROCEDURE TO mcds;
+GRANT CONNECT,RESOURCE TO mcds;
+GRANT CREATE ANY DIRECTORY TO mcds;
+GRANT SELECT ON themis.merchant TO mcds;
+
+-- Following must be done with "sys as sysdba"
+GRANT EXECUTE ON utl_file TO mcds;
+GRANT EXECUTE ON dbms_crypto TO mcds;

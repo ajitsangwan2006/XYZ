@@ -1,0 +1,10 @@
+			Indepay Bill Payment Service
+		   ====================================
+
+Release 	:0.1
+SVN Build No	:1857
+Date 		:10 Dec 2008
+Status		:Release 1
+	   
+
+

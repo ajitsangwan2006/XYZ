@@ -1,0 +1,227 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12px;
+	SCROLLBAR-HIGHLIGHT-COLOR: white;
+	SCROLLBAR-SHADOW-COLOR: gray;
+	COLOR: #333333;
+	SCROLLBAR-3DLIGHT-COLOR: gray;
+	SCROLLBAR-ARROW-COLOR: black;
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	FONT-FAMILY: Trebuchet MS, Verdana;
+	SCROLLBAR-DARKSHADOW-COLOR: white;
+	SCROLLBAR-BASE-COLOR: #ffffff;
+	background-color: #EBEBDA;
+}
+TD {
+	SCROLLBAR-FACE-COLOR: #ffffff; FONT-WEIGHT: normal; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: white; SCROLLBAR-SHADOW-COLOR: gray; COLOR: #333333; SCROLLBAR-3DLIGHT-COLOR: gray; SCROLLBAR-ARROW-COLOR: black; SCROLLBAR-TRACK-COLOR: #ffffff; FONT-FAMILY: Trebuchet MS, Verdana; SCROLLBAR-DARKSHADOW-COLOR: white; SCROLLBAR-BASE-COLOR: #ffffff
+}
+TH {
+	SCROLLBAR-FACE-COLOR: #ffffff; FONT-WEIGHT: normal; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: white; SCROLLBAR-SHADOW-COLOR: gray; COLOR: #333333; SCROLLBAR-3DLIGHT-COLOR: gray; SCROLLBAR-ARROW-COLOR: black; SCROLLBAR-TRACK-COLOR: #ffffff; FONT-FAMILY: Trebuchet MS, Verdana; SCROLLBAR-DARKSHADOW-COLOR: white; SCROLLBAR-BASE-COLOR: #ffffff
+}
+BODY {
+	MARGIN: 0px
+}
+A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000066; FONT-FAMILY: Trebuchet MS, Verdana
+}
+A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000066; FONT-FAMILY: Trebuchet MS, Verdana; TEXT-DECORATION: underline
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #003399; FONT-FAMILY: Trebuchet MS, Verdana; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+.asub:link {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS, Verdana
+}
+.asub:visited {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS, Verdana
+}
+.asub:hover {
+	FONT-SIZE: 11px; COLOR: #003399; FONT-FAMILY: Trebuchet MS, Verdana; TEXT-DECORATION: none
+}
+.asub:active {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+
+
+
+
+
+
+
+h1 {font-family: Verdana, sans-serif; color: red; font-size: 20px; } 
+
+h2{font-family: Verdana, sans-serif; color: red; font-size: 15px; } 
+
+
+.ta {scrollbar-base-color: #D2E89E; background-color: #EDF6D4;}
+
+}
+
+table
+{
+border-collapse: collapse;
+}
+
+
+TD {
+	SCROLLBAR-FACE-COLOR: #ffffff; FONT-WEIGHT: normal; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: white; SCROLLBAR-SHADOW-COLOR: gray; COLOR: #333333; SCROLLBAR-3DLIGHT-COLOR: gray; SCROLLBAR-ARROW-COLOR: black; SCROLLBAR-TRACK-COLOR: #ffffff; FONT-FAMILY:  Verdana; SCROLLBAR-DARKSHADOW-COLOR: white; SCROLLBAR-BASE-COLOR: #ffffff
+}
+TH {
+	SCROLLBAR-FACE-COLOR: #ffffff; FONT-WEIGHT: normal; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: white; SCROLLBAR-SHADOW-COLOR: gray; COLOR: #660000; SCROLLBAR-3DLIGHT-COLOR: gray; SCROLLBAR-ARROW-COLOR: black; SCROLLBAR-TRACK-COLOR: #ffffff; FONT-FAMILY:  Verdana; SCROLLBAR-DARKSHADOW-COLOR: white; SCROLLBAR-BASE-COLOR: #ffffff
+}
+SELECT {
+	BORDER-RIGHT: #000066 1px solid; BORDER-TOP: #000066 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #000066 1px solid; COLOR: #000066; TEXT-INDENT: 3pt; BORDER-BOTTOM: #000066 1px solid; FONT-FAMILY:  Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; fs: 1px
+}
+INPUT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: black 1px solid; COLOR: #000000; TEXT-INDENT: 3pt; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Trebuchet MS, Verdana, Geneva, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+TEXTAREA {
+	BORDER-RIGHT: #000066 1px solid; BORDER-TOP: #000066 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #000066 1px solid; COLOR: #000066; TEXT-INDENT: 3pt; BORDER-BOTTOM: #000066 1px solid; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; fs: 1px
+}
+.tabletop {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: Trebuchet MS, Verdana
+}
+.italicbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-STYLE: italic; FONT-FAMILY: MS, Verdana
+}
+P {
+	TEXT-ALIGN: justify
+}
+.tableborder {
+	BORDER-RIGHT: #003399 1px outset; BORDER-TOP: #003399 1px outset; BORDER-LEFT: #003399 1px outset; COLOR: #000000; BORDER-BOTTOM: #003399 1px outset
+}
+.BgGray {
+	FONT-WEIGHT: bold; COLOR: #000066; BACKGROUND-COLOR: #95bfff
+}
+.tablecolor {
+	BORDER-RIGHT: #4a2025 1px outset; BORDER-TOP: #4a2025 1px outset; FONT-WEIGHT: bold; FONT-SIZE: 11px; TEXT-TRANSFORM: capitalize; BORDER-LEFT: #4a2025 1px outset; COLOR: #000000; BORDER-BOTTOM: #4a2025 1px outset; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: 00BFFF; 
+}
+.style1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000033
+}
+.style2 {
+	FONT-WEIGHT: bold; COLOR: #333333;FONT-SIZE: 11px;
+}
+.style3 {
+	COLOR: #993300
+}
+.tablebordergray {
+	BORDER-RIGHT: #cccccc 1px outset; BORDER-TOP: #cccccc 1px outset; BORDER-LEFT: #cccccc 1px outset; COLOR: #000000; BORDER-BOTTOM: #cccccc 1px outset
+}
+.tablecolor2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; TEXT-TRANSFORM: capitalize; COLOR: #ffffff; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #60a2b2
+}
+
+input.btn{
+   color:#050;
+   font-family:verdana;
+   font-size:90%;
+   font-weight:bold;
+   background-color:#fed;
+   border:1px solid;
+   border-top-color:#696;
+   border-left-color:#696;
+   border-right-color:#363;
+   border-bottom-color:#363;
+	height: 2em;
+}
+
+.tablecolor3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; TEXT-TRANSFORM: capitalize; COLOR: #ffffff; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #60a2b2
+}
+.toplinks {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #447199; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.toplinks:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #ff3333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.menu {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.menu:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #ff0000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.txt {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+.bluetxt {
+	FONT-WEIGHT: bold; FONT-SIZE: 9px; COLOR: #5391d5; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif
+}
+.redtxt {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ff0000; FONT-FAMILY: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif
+}
+.copyright {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #043aa4; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif
+}
+.bluetxt-prod {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #4f599b; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif
+}
+.customers {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #5085b1; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+.blue-text-head {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #043aa4; FONT-FAMILY: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif
+}
+.subtxt-news {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #547d6f; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif
+}
+.getthemessage {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #043aa4; FONT-STYLE: italic; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif
+}
+.popup-head {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #043aa4; FONT-FAMILY: Trebuchet MS, Verdana, Arial, Helvetica, sans-serif
+}
+.lin {
+	BORDER-TOP-WIDTH: thin; BORDER-LEFT-COLOR: black; BORDER-BOTTOM-COLOR: black; BORDER-TOP-COLOR: #ff3333; BORDER-RIGHT-COLOR: black
+}
+.tdbg1 {
+	BACKGROUND-COLOR: #666699
+}
+.tdbgheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; VERTICAL-ALIGN: middle; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #9999cc; TEXT-ALIGN: center
+}
+.toprep {
+	BACKGROUND-IMAGE: url(images/ps_top_rep.gif); BACKGROUND-REPEAT: repeat-x
+}
+.rep {
+	BACKGROUND-IMAGE: url(images/ps_left_rep.gif); BACKGROUND-REPEAT: repeat-y
+}
+.botrep {
+	BACKGROUND-IMAGE: url(images/ps_left_bot.gif); BACKGROUND-REPEAT: repeat-y
+}
+.bottrep {
+	BACKGROUND-IMAGE: url(images/ps_bot_rep.gif); BACKGROUND-REPEAT: repeat-x
+}
+.tdbg {
+	FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #666699; FONT-VARIANT: normal
+}
+.tdyel {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffcc
+}
+.bgx {
+	BACKGROUND-IMAGE: url(images/gnbg.jpg)
+}
+.boxtop {
+	BORDER-RIGHT: #cccccc; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc; BORDER-BOTTOM: #cccccc
+}
+.boxbottom {
+	BORDER-BOTTOM: #cccccc 1px solid
+}
+
+
+
+frame
+{
+	scrollbar-3dlight-color:gold;
+	scrollbar-arrow-color:yellow;
+	scrollbar-base-color:tomato;
+	scrollbar-darkshadow-color:orange;
+	scrollbar-face-color:teal;
+	scrollbar-highlight-color:hotpink;
+	scrollbar-shadow-color:magenta;
+}

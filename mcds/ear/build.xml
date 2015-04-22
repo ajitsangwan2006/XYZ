@@ -1,0 +1,138 @@
+<project name="mcds-ear" default="">
+
+
+    <!-- import vas wide properties -->
+    <import file="${ant.file.mcds-ear}/../../../build-properties.xml"/>
+
+
+    <property name="app.name" value="mcds"/>
+    <property name="verbose" value="false"/>
+    <property name="src.dir" value="${ant.file.mcds-ear}/.."/>
+    <property name="dist.dir" value="${vas.dist.dir}/${app.name}/ear-exploded"/>
+    <property name="app.inf.lib" value="${src.dir}/APP-INF/lib"/>
+	<property name="script.dir"	value="${ant.file.mcds-ear}/../../scripts/"/>
+
+    <property name="ear.dir" value="${vas.dist.dir}/${app.name}/jars"/>
+    <property name="ear" value="${ear.dir}/${app.name}.ear"/>
+    <property name="jar.file.name" value="${ear.dir}/${app.name}.jar"/>
+
+    <property name="user" value="weblogic"/>
+    <property name="password" value="weblogic"/>
+    <property name="adminurl" value="iiop://localhost:7001"/>
+    <property name="vas.domain.dir" value="${ant.file.mcds-ear}/../../../../bea/user_projects/domains/vas_domain/"/>
+	
+	<!-- Define Dependencies -->
+    <path id="mcds.dependencies.path">
+        <pathelement location="${vas.dist.dir}/gvcl/gvcl.jar"/>
+        <pathelement location="${vas.dist.dir}/themis/jars/themis.jar"/>
+		<pathelement location="${vas.base.dir}/extlib/commons-HttpClient/commons-httpclient-3.0.1.jar" />
+		<pathelement location="${vas.base.dir}/extlib/commons-codec/commons-codec-1.3.jar" />
+		<pathelement location="${vas.base.dir}/extlib/commons-logging/commons-logging-1.1.jar" />
+		<pathelement location="${vas.base.dir}/extlib/xerces/xerces.jar" />	
+        <pathelement location="${vas.base.dir}/extlib/weblogic/weblogic.jar" />    	
+		<pathelement location="${vas.base.dir}/extlib/poi/poi-3.0.1-FINAL-20070705.jar" />
+    </path>
+
+
+    <!-- resets the whole thing -->
+    <target name="reset" depends="undeploy, clean, build, deploy" description="resets the whole thing"/>
+
+
+    <!-- Deletes the dist.dir to clean the build -->
+    <target name="clean" description="Deletes the build directory">
+        <delete dir="${dist.dir}"/>
+        <delete file="${app.inf.lib}/gvcl.jar"/>
+        <delete file="${app.inf.lib}/themis.jar"/>
+        <delete dir="${ear.dir}"/>
+    </target>
+
+
+    <!-- Builds the entire mcds-ear application -->
+    <target name="build" depends="init, compile" description="Compiles demo application and runs appc">
+        <antcall target="pack"/>
+    </target>
+
+
+    <!-- initialization -->
+    <target name="init" description="Copies dependencies into app-inf">
+        <!-- <mkdir dir="${vas.dist.dir}/${app.name}" /> -->
+        <mkdir dir="${ear.dir}"/>
+        <!-- <mkdir dir="${dist.dir}"/> -->
+        <copy file="${vas.dist.dir}/gvcl/gvcl.jar" todir="${app.inf.lib}"/>
+        <copy file="${vas.dist.dir}/themis/jars/themis.jar" todir="${app.inf.lib}"/>
+        <copy file="${vas.base.dir}/extlib/commons-HttpClient/commons-httpclient-3.0.1.jar"  todir="${app.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/commons-codec/commons-codec-1.3.jar" 	 todir="${app.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/commons-logging/commons-logging-1.1.jar" 	 todir="${app.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/xerces/xerces.jar" 				 todir="${app.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/mail/mail.jar" 				 todir="${app.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/mail/activation.jar" 			 todir="${app.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/poi/poi-3.0.1-FINAL-20070705.jar" 	 todir="${app.inf.lib}" />
+</target>
+
+
+    <!-- Only compiles mcds-ear application, no appc -->
+    <target name="compile" description="Only compiles demo application, no appc">
+        <wlcompile srcdir="${src.dir}" destdir="${dist.dir}" includes="java">
+            <javac nowarn="true">
+                <classpath refid="mcds.dependencies.path"/>
+            </javac>
+        </wlcompile>
+		<wlcompile srcdir="${src.dir}" destdir="${dist.dir}" includes="ejbs">
+            <javac nowarn="true">
+                <classpath refid="mcds.dependencies.path"/>
+            </javac>
+        </wlcompile>
+    </target>
+
+
+    <!-- Deploys the entire mcds-ear application -->
+    <target name="deploy" description="Deploys (and redeploys) the entire mcds-ear application">
+    
+    <copy todir="${vas.domain.dir}">
+    <fileset dir="${script.dir}">
+    <include name="mcds.config"/>
+    </fileset>
+    </copy>
+
+        <wldeploy user="${user}" password="${password}" adminurl="${adminurl}"
+                  action="deploy" source="${dist.dir}"
+                  name="${app.name}"/>
+    </target>
+
+
+    <!-- Undeploys the entire mcds-ear application -->
+    <target name="undeploy" description="Undeploys the entire mcds-ear application">
+        <wldeploy user="${user}" password="${password}" adminurl="${adminurl}"
+                  action="undeploy" name="${app.name}" failonerror="false"/>
+    </target>
+
+
+    <!-- redeploys the EAR without rebuilding -->
+    <target name="redeploy" description="Redeploys the ear without re-building">
+        <antcall target="undeploy"/>
+        <antcall target="deploy"/>
+    </target>
+
+
+    <!-- Runs weblogic.appc on your application -->
+    <target name="appc" description="Runs weblogic.appc on your application">
+        <wlappc source="${dist.dir}" verbose="${verbose}"/>
+    </target>
+
+
+    <!-- Package compiled classes for deployment/distribution  -->
+    <target name="pack" description="Package a standard J2EE EAR for distribution">
+
+        <!-- creates a jar file containing classes required in classpath -->
+        <jar destfile="${jar.file.name}">
+            <fileset dir="${dist.dir}/APP-INF/classes"/>
+            <fileset dir="${dist.dir}/ejbs" excludes="_WL_GENERATED"/>
+        </jar>
+
+
+        <!-- creates a standard j2ee ear file -->
+        <wlpackage srcdir="${src.dir}" destdir="${dist.dir}" toFile="${ear}"/>
+    </target>
+
+</project>
+

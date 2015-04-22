@@ -1,0 +1,95 @@
+<project name="mcds-web" default="">
+	
+			<!-- properties -->
+	<property environment="env"/>
+	<import file="${ant.file.mcds-web}/../../../build-properties.xml"/>
+
+
+
+			<!-- directories -->	
+	<property name="mcds.web.base.dir" 				value="${ant.file.mcds-web}/.."   	/>
+	<property name="web.dir"					value="${mcds.web.base.dir}/web"	/>
+  	<property name="dist.dir" 					value="${vas.dist.dir}/mcds/webapp" 	/>
+  	<property name="servlet.dir"					value="${mcds.web.base.dir}/src" />
+  	<property name="build.dir"					value="${dist.dir}/WEB-INF/classes" 	/>
+  	<property name="web.inf.lib"					value="${dist.dir}/WEB-INF/lib"					/>
+	
+	
+
+	
+			<!-- tomcat configuration -->
+	<property name="tomcat.home"		value="${env.TOMCAT_HOME}" 	/>
+	<property name="tomcat.webapp.dir"	value="${tomcat.home}/webapps"  />
+	<property name="mcds.web.name" 		value="mcds" 			/>
+	
+	
+	
+			<!-- Define Dependencies -->
+	<path id="mcds.dependencies.path">
+			<pathelement location="${vas.dist.dir}/gvcl/gvcl.jar" />
+			<pathelement location="${vas.dist.dir}/themis/jars/themis.jar" />
+			<pathelement location="${vas.dist.dir}/mcds/jars/mcds.jar" />
+			<pathelement location="${vas.base.dir}/extlib/poi/poi-3.0.1-FINAL-20070705.jar" />
+	</path>
+	
+	
+	
+<!-- ===================================================================== -->	
+	
+	
+	
+
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<copy file="${vas.dist.dir}/gvcl/gvcl.jar" 		todir="${web.inf.lib}" />
+		<copy file="${vas.dist.dir}/themis/jars/themis.jar" 	todir="${web.inf.lib}" />	
+		<copy file="${vas.dist.dir}/mcds/jars/mcds.jar" 	todir="${web.inf.lib}" />
+		<copy file="${vas.base.dir}/extlib/poi/poi-3.0.1-FINAL-20070705.jar" 	 todir="${web.inf.lib}" />
+	</target>	
+	
+
+
+	
+	<target name="build" depends="init" description="builds the web application">
+		<copy todir="${dist.dir}">
+		    <fileset dir="${web.dir}"/>
+  		</copy>
+  		
+		<javac srcdir="${servlet.dir}" destdir="${build.dir}"  debug="true" deprecation="false" nowarn="true">
+			<classpath refid="mcds.dependencies.path" />
+		</javac>
+	</target>
+
+
+	
+	
+	
+	
+	
+	<target name="clean" description="cleans the output of previous build">
+		<delete dir="${dist.dir}" />
+		<delete dir="${tomcat.webapp.dir}/${mcds.web.name}" />
+	</target>
+	
+	
+	
+	
+	<target name="deploy" description="deploys the web application to tomcat">
+		<mkdir dir="${tomcat.webapp.dir}/${mcds.web.name}" />
+		<copy todir="${tomcat.webapp.dir}/${mcds.web.name}">
+			<fileset dir="${dist.dir}"/>
+		</copy>
+	</target>	
+	
+	
+	
+	
+	<target name="undeploy" description="undeploys the web application from tomcat">
+		<delete dir="${tomcat.webapp.dir}/${mcds.web.name}" />
+	</target>
+	
+	
+	
+	<target name="reset" 	depends="undeploy, clean, build, deploy" />
+	
+</project>
